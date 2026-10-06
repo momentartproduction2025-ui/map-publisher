@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MAP Publisher — Privacy Policy</title>
+<meta name="description" content="What MAP Publisher accesses, stores, keeps and deletes, including TikTok account data and tokens.">
+<style>
+:root{--bg:#fff;--fg:#1d1d1f;--muted:#5c5c66;--line:#e3e3e8;--link:#0b57d0}
+@media (prefers-color-scheme:dark){:root{--bg:#16161a;--fg:#ececf0;--muted:#a0a0ad;--line:#2c2c34;--link:#8ab4f8}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1rem 4rem}h1{font-size:1.8rem;line-height:1.25;margin:0 0 .25rem}h2{font-size:1.15rem;margin:2rem 0 .5rem}
+p,li{margin:.5rem 0}.meta{color:var(--muted);font-size:.9rem}a{color:var(--link)}nav{display:flex;gap:1rem;flex-wrap:wrap;border-bottom:1px solid var(--line);padding:.75rem 1rem}
+nav a{text-decoration:none}table{border-collapse:collapse;width:100%;font-size:.95rem}th,td{border:1px solid var(--line);padding:.45rem .6rem;text-align:left;vertical-align:top}
+.note{border-left:3px solid var(--line);padding-left:.9rem;color:var(--muted)}footer{border-top:1px solid var(--line);margin-top:3rem;padding-top:1rem;color:var(--muted);font-size:.9rem}
+</style>
+</head>
+<body>
+<nav><a href="../">MAP Publisher</a><a href="../terms/">Terms of Service</a><a href="../privacy/">Privacy Policy</a></nav>
+<main>
+<h1>Privacy Policy</h1>
+<p class="meta">MAP Publisher &middot; Effective 6 October 2026</p>
+<p>This policy describes what MAP Publisher, an internal tool operated by Moment Art Production (Jeddah), actually does with data. It runs on the operator's own computer and has no server of its own that receives your data.</p>
+<h2>1. Whose data</h2>
+<p>MAP Publisher handles data about the social media accounts it is connected to, which are accounts the operator owns or is authorised to manage. It collects nothing from visitors of this website: the pages are static, set no cookies and run no analytics or advertising scripts of their own. The company that hosts these pages may keep ordinary server logs, which are outside our control.</p>
+<h2>2. What it receives from TikTok</h2>
+<p>When the operator authorises a TikTok account through TikTok Login Kit, TikTok provides the following, limited to the permissions granted:</p>
+<table>
+<tr><th>TikTok permission</th><th>Data</th></tr>
+<tr><td>user.info.basic</td><td>open ID (TikTok's identifier for the account), display name, avatar link</td></tr>
+<tr><td>user.info.profile</td><td>username, profile link, bio, verified status</td></tr>
+<tr><td>user.info.stats</td><td>follower, following, like and video counts</td></tr>
+<tr><td>video.list</td><td>the account's public videos (identifier, title, cover image link)</td></tr>
+<tr><td>video.upload, video.publish</td><td>no data is read; these only allow creating a draft or posting a video, and each such action needs a separate human approval</td></tr>
+</table>
+<p>TikTok also returns an access token (valid for about 24 hours) and a refresh token (valid for about 365 days, per TikTok), with the list of permissions granted and their expiry times.</p>
+<h2>3. What is stored, and where</h2>
+<ul>
+<li><strong>Credential files</strong> on the operator's computer: the account's tokens, open ID, granted permissions and expiry times, in a folder that is excluded from version control and set to be readable only by the operator where the file system supports it. The TikTok app's client key and secret are stored the same way, once for all accounts. Credentials are never written to logs, to the database or to screen output.</li>
+<li><strong>A local database</strong> (SQLite) on the same computer: the account's handle, display name and open ID, connection status, the result and time of identity checks, the permissions TikTok reported, and an activity and audit log of what the tool did and when.</li>
+<li><strong>Not stored by the current version:</strong> video lists and statistics read from TikTok are shown to the operator when requested and are not saved to the database.</li>
+<li>Point-in-time copies of the local database, without credential files, may be kept in a backups folder on the operator's computer before significant changes.</li>
+</ul>
+<h2>4. How it is used</h2>
+<p>Only to confirm which TikTok account is connected, to show connection status on the operator's local dashboard, to show the operator account information on request, and to carry out an action the operator has specifically approved. It is not used for advertising, profiling or analytics, and it is not sold, rented or shared with anyone. Data travels only between the operator's computer and TikTok.</p>
+<h2>5. Retention</h2>
+<ul>
+<li>Tokens are kept while the account stays connected. The access token is replaced when it is refreshed, and a new refresh token replaces the old one if TikTok issues one.</li>
+<li>Database records and audit log entries are kept until the operator deletes them. There is no automatic deletion schedule.</li>
+</ul>
+<h2>6. Disconnecting and deletion</h2>
+<ul>
+<li><strong>Disconnect:</strong> the tool's disconnect command asks TikTok to revoke the access and deletes the stored credential file. The account holder can also remove the app's access in TikTok's own app-permission settings at any time.</li>
+<li><strong>Deletion:</strong> the credential file is removed on disconnect. Earlier database records (such as past identity checks and audit log entries) stay until the operator deletes them from the local database, which the operator can do on request. Deletion of local data is carried out by the operator by hand; there is no automated request process.</li>
+<li>Data held by TikTok itself is governed by TikTok's own privacy policy.</li>
+</ul>
+<h2>7. Security</h2>
+<p>Credentials are entered through hidden prompts, kept out of version control, and never printed. No system is perfectly secure, and we make no guarantee beyond these practices.</p>
+<h2>8. Changes and contact</h2>
+<p>This policy may be updated; the effective date above shows the current version. Questions or requests: <a href="mailto:momentartproduction2025@gmail.com">momentartproduction2025@gmail.com</a>.</p>
+<footer>
+<p>MAP Publisher is operated by Moment Art Production (Jeddah). Contact: <a href="mailto:momentartproduction2025@gmail.com">momentartproduction2025@gmail.com</a></p>
+<p>This page describes how the tool works. It is not legal advice and does not claim compliance with any particular law or regulation.</p>
+</footer>
+</main>
+</body>
+</html>
